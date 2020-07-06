@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="pos_flexible_pricelist_view_form" model="ir.ui.view">
+        <field name="name">pos_flexible_pricelist.pos.config.form.view</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+        <field name="arch" type="xml">
+            <sheet position="inside">
+                <h2>Tarifas</h2>
+                <div class="row mt16 o_settings_container">
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label for="tarifas_ids" string="Tarifas"/>
+                            <div class="content-group mt16">
+                                <field name="tarifas_ids">
+                                    <tree string="Tarifas">
+                                        <field name="tarifa_id"/>
+                                        <field name="dia"/>
+                                        <field name="hora_inicio" widget="float_time"/>
+                                        <field name="hora_fin" widget="float_time"/>
+                                    </tree>
+                                </field>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </sheet>
+        </field>
+    </record>
+
+    <record id="pos_flexible_pricelists_tarifa_view_form" model="ir.ui.view">
+        <field name="name">pos.flexible.pricelists.tarifa.pos.config.form</field>
+        <field name="model">pos_flexible_pricelists.tarifa</field>
+        <field name="arch" type="xml">
+            <form string="Tarifa">
+                <group>
+                    <field name="tarifa_id"/>
+                    <field name="dia"/>
+                    <field name="hora_inicio" widget="float_time"/>
+                    <field name="hora_fin" widget="float_time"/>
+                </group>
+            </form>
+        </field>
+    </record>
+</odoo>
